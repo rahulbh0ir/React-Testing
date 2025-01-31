@@ -11,16 +11,7 @@ function App() {
 
   return (
     <>
-    <form>
-
-    <select value={car} onChange={handle}>
-      <option value="Maruti">Maruti</option>
-      <option value="Suzuki">Suzuki</option>
-      <option value="Honda">Honda</option>
-      <option value="Kia">Kia</option>
-    </select>
-
-    </form>
+    <h2>Hello</h2>
     </>
   )
 }
