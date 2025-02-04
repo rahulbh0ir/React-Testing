@@ -12,6 +12,9 @@ const router = createBrowserRouter([
   {path: "/a" , element: <> <Navbar /> <About /> </>},
   {path: "/b" , element: <> <Navbar/> <Blogs /> </>}
 ])
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
