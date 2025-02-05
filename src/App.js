@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { RouterProvider } from "react-router-dom";
-import UserContext from "./pages/Context";
+import context from "./pages/Context"
 
 function App({router}) {
   const [user, setUser] = useState("Alucard")
 
   return (
-    <UserContext.Provider value={user}>
+    <context.Provider value={{user, setUser}}>
       <RouterProvider router={router}/>
-    </UserContext.Provider>
+    </context.Provider>
   )
 }
 
