@@ -1,12 +1,11 @@
 import React, { useCallback, useState } from 'react'
-import Content from './Content'
-
+import Fetch from './Fetch'
 const Home = () => {
 
   return (
     <>
     <h1>Home Page</h1>
-    <Content />
+    <Fetch />
     </>     
   )
 }
