@@ -12,7 +12,7 @@ const useCounter = (initial = 0, value = 1) => {
    }
 
    const reset = () => {
-     setCount(prev => prev = 0) 
+     setCount(initial) 
    }
 
     return [count, increment, decrement, reset]
