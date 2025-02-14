@@ -12,7 +12,6 @@ const Counter = () => {
       <button onClick={plus}>Plus</button>
       <button onClick={minus}>Minus</button>
       <button onClick={reset}>Reset</button>
-      
     </>
   )
 }
