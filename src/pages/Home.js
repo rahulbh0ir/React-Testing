@@ -1,11 +1,11 @@
 import React, { } from 'react'
-import ClassCounter from './ClassCounter'
+import StateArray from './StateArray'
 const Home = () => {
 
   return (
     <>
     <h1>Home Page</h1>
-    <ClassCounter />
+    <StateArray />
     </>     
   )
 }
