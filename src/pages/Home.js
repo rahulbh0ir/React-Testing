@@ -1,11 +1,11 @@
 import React, { } from 'react'
-import InputPage from './InputPage'
+import ClassCounter from './ClassCounter'
 const Home = () => {
 
   return (
     <>
     <h1>Home Page</h1>
-    <InputPage />
+    <ClassCounter />
     </>     
   )
 }
