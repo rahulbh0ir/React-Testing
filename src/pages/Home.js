@@ -1,5 +1,6 @@
 import React, { } from 'react'
 import EffectHook from './EffectHook'
+import EffectClass from './EffectClass'
 const Home = () => {
 
   return (
