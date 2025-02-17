@@ -13,12 +13,18 @@ const EffectHook = () => {
   useEffect(() => {
     console.log("Effect")
     window.addEventListener("mousemove", func)
+
+    return () => {
+      window.removeEventListener("mousemove", func)  
+    }
+
   }, [])
 
   return (
     <>
-    <p>X - {x}</p> 
-    <p>Y - {y}</p> 
+    <h3>X - {x}</h3> 
+    <h3>Y - {y}</h3> 
+    <p>--Watch console--</p>
     </>
   )
 }
