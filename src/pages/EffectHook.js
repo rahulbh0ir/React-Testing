@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
 
 const EffectHook = () => {
-  
-  const [count, setCount] = useState(0);
-  const [value, setValue] = useState("");
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+ 
+  const func = (e) => {
+    console.log("Function")
+    setX(e.clientX)
+    setY(e.clientY)
+  }
 
   useEffect(() => {
-    document.title = `Counter - ${count}`
-  },[count])
-  
-   return (
+    console.log("Effect")
+    window.addEventListener("mousemove", func)
+  }, [])
+
+  return (
     <>
-    <input 
-      type='text'
-      value={value}
-      onChange={(e) => setValue(e.target.value)}  
-    />
-    <button onClick={() => setCount((prev) => prev + 1)}>Count - {count}</button>  
+    <p>X - {x}</p> 
+    <p>Y - {y}</p> 
     </>
   )
 }

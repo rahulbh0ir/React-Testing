@@ -4,31 +4,24 @@ class EffectClass extends Component {
   constructor(props){
     super(props)
     this.state = {
-      count : 0,
-      value : ""
+      x : 0,
+      y : 0
     }
   } 
 
-  componentDidMount() {
-    document.title = `Count ${this.state.count}`
+  func = (e) => {
+    this.setState({ x : e.clientX, y : e.clientY})
   }
 
-  componentDidUpdate(prevprops, prevstate) {
-    if(prevstate.count !== this.state.count){
-      document.title = `Count ${this.state.count}`
-      console.log("Render")
-    }
+  componentDidMount() {
+    window.addEventListener("mousemove", this.func)
   }
 
   render() {
     return (
       <>
-      <input 
-        type="text" 
-        value={this.state.value}
-        onChange={(e) => this.setState({value : e.target.value})}  
-        /> 
-      <button onClick={() => this.setState({count : this.state.count + 1 })}>Count - {this.state.count}</button>
+      <p>X - {this.state.x}</p>
+      <p>Y - {this.state.y}</p>
       </>
     )
   }
