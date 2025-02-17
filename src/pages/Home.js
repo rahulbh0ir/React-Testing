@@ -1,11 +1,11 @@
 import React, { } from 'react'
-import StateArray from './StateArray'
+import EffectHook from './EffectHook'
 const Home = () => {
 
   return (
     <>
     <h1>Home Page</h1>
-    <StateArray />
+    <EffectHook />
     </>     
   )
 }
