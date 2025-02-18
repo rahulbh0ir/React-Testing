@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from 'react'
 
 const EffectHook = () => {
-  const [count, setCount] = useState(0)
   
-  const tick = () => {
-    setCount(prev => prev + 1)
+  const [post, setPost] = useState([]);
+  const [num, setNum] = useState(1);
+  const [btn, setBtn] = useState(1);
+  
+  const fun = () => {
+    setBtn(num)
   }
-
-  // useEffect( () => {
-  //   const interval = setInterval(tick, 1000) 
   
-  //   return () => {
-  //     clearInterval(interval)
-  //   }
-
-  // }, [] )
-  
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${btn}`)
+      .then(res => res.json())
+      .then(data => setPost(data))
+  }, [btn])
 
   return (
     <>
-    <h1>Effect Hook</h1>
-    <h2>{count}</h2>
+    <h2>Data Fetching</h2>
+    
+    <input 
+      type='number' 
+      value={num}
+      onChange={(e) => setNum(e.target.value)}  
+      />
+    
+    <button onClick={fun}>Fetch</button>
+    
+    <h3 key={post.id}>Title : {post.title}</h3>  
+
     </>
   )
 }
