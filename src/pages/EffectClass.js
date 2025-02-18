@@ -1,27 +1,30 @@
 import React, { Component } from 'react'
 
 class EffectClass extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      x : 0,
-      y : 0
+      count : 0
     }
-  } 
-
-  func = (e) => {
-    this.setState({ x : e.clientX, y : e.clientY})
   }
 
   componentDidMount() {
-    window.addEventListener("mousemove", this.func)
+    // this.interval = setInterval(this.tick , 1000)
+  }
+
+  
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  tick = () => {
+    this.setState({count : this.state.count + 1})
   }
 
   render() {
     return (
       <>
-      <p>X - {this.state.x}</p>
-      <p>Y - {this.state.y}</p>
+      <h2>{this.state.count}</h2>
       </>
     )
   }
