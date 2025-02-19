@@ -9,7 +9,7 @@ function About() {
 
   return(
     <>
-    <h1> About Page</h1>
+    <h1>About Page</h1>
     <button onClick={() => setCount(count + 1)} style={{backgroundColor : "orange"}}>Count - {count}</button>
     </> 
 
