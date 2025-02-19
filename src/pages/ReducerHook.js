@@ -1,31 +1,14 @@
-import React, { useReducer } from 'react'
-
-const ini = 0 ;
-const fun = (state, action) => {
-    switch(action) {
-        case "plus":
-           return (state = state + 1) 
-        case "minus":
-            return (state = state - 1)
-        case "reset":
-            return (ini)
-        default:
-            return state
-            
-        }        
-}
-
+import React, { useContext } from 'react'
+import context from './Context'
 
 const ReducerHook = () => {
-
-  const [count, dispatch] = useReducer(fun, ini)  
-
+  const red = useContext(context)  
   return (
     <>
-    <h2>{count}</h2>
-    <button onClick={() => dispatch("plus")}>Plus</button> 
-    <button onClick={() => dispatch("minus")}>Minus</button> 
-    <button onClick={() => dispatch("reset")}>Reset</button> 
+    <h2>{red.count}</h2>
+    <button onClick={() => red.func("plus")}>Plus</button>  
+    <button onClick={() => red.func("minus")}>Minus</button>  
+    <button onClick={() => red.func("reset")}>Reset</button>  
     </>
   )
 }

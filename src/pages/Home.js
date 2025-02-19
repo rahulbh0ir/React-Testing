@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
     <h1>Home</h1>
-    <p>Welcome {name}</p>
+    <p>Welcome {name.user}</p>
 
     <ReducerHook />
 
