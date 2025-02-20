@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import context from './Context'
-import ReducerHook from './ReducerHook'
+import ReducerFetch from './ReducerFetch'
 
 const Home = () => {
 
@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <>
     <h1>Home</h1>
-    <p>Welcome {name.user}</p>
+    <p style={{color: "magenta"}}>Welcome {name.user}</p>
 
-    <ReducerHook />
+    <ReducerFetch />
 
     
     </>     
